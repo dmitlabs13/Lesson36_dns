@@ -30,6 +30,36 @@ alp-ns2 192.168.50.215 \
 alp-nginx-web 192.68.50.219 \
 alp-log 192.168.217 \
 
+плейбук для устновки bind9 и утилит \
+``
+---
+- name: Установка bind и утилит
+  hosts: ns_servers
+  become: yes
+  tasks:
+    - name: Установить bind9
+      apt:
+        name: bind9
+        state: present
+        update_cache: yes
+
+    - name: Установить bind9-utils
+      apt:
+        name: bind9-utils
+        state: present
+
+    - name: Установить dnsutils
+      apt:
+        name: dnsutils
+        state: present
+
+    - name: Установить chrony для синхронизации времени
+      apt:
+        name: chrony
+        state: present
+      
+  ``
+
 
 
 
