@@ -31,7 +31,8 @@ alp-nginx-web 192.68.50.219 \
 alp-log 192.168.217 \
 
 плейбук для устновки bind9 и утилит \
-``
+````
+
 ---
 - name: Установка bind и утилит
   hosts: ns_servers
@@ -58,7 +59,7 @@ alp-log 192.168.217 \
         name: chrony
         state: present
       
-  ``
+```
 
 
 
